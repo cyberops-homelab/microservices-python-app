@@ -1,6 +1,6 @@
 secret:
-  root_username: nasi
-  root_password: nasi1234
-  username: nasi
-  password: nasi1234
-  users_list: nasi
+  root_username: admin
+  root_password: admin@123
+  username: homelab
+  password: homelab@123
+  users_list: admin
