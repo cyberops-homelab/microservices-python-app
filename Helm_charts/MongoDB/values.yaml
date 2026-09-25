@@ -4,3 +4,4 @@ secret:
   username: homelab
   password: homelab@123
   users_list: admin
+image: mongo:8
