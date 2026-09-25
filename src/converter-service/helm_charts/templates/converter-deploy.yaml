@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: notification
+  name: converter
   labels:
-    app: notification
+    app: converter
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
-      app: notification
+      app: converter
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -16,13 +16,15 @@ spec:
   template:
     metadata:
       labels:
-        app: notification
+        app: converter
     spec:
       containers:
-        - name: notification
-          image: nasi101/notification
+        - name: converter
+          image: {{.Values.image }}
           envFrom:
             - configMapRef:
-                name: notification-configmap
+                name: converter-configmap
             - secretRef:
-                name: notification-secret
+                name: converter-secret
+
+    

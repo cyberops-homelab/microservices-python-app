@@ -1,0 +1,8 @@
+database:  
+  host: db
+  name: authdb
+  user: admin
+  password: admin@123
+  table: auth_user
+jwt_secret: "hello"
+image: cyber0ps/auth-service
