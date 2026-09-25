@@ -26,7 +26,7 @@ pipeline{
         stage('Docker Build Image'){
             steps{
                 sh '''
-                    docker build -t ${BUILD_IMAGE}-service:${BUILD_NUMBER} src/${BUILD_IMAGE}-service
+                    docker build --progress=plain -t ${BUILD_IMAGE}-service:${BUILD_NUMBER} src/${BUILD_IMAGE}-service
                 '''
             }
         }
