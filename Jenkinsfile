@@ -6,6 +6,10 @@ def COLOR_MAP = [
 pipeline{
     agent any
     parameters {
+        string(
+            name: 'REPO',
+            defaultValue: 'cyber0ps'
+        )
         choice(
             name: 'BUILD_IMAGE',
             choices: ['auth','converter','gateway','notification'],
@@ -26,14 +30,14 @@ pipeline{
         stage('Docker Build Image'){
             steps{
                 sh '''
-                    docker build -t ${BUILD_IMAGE}-service:${BUILD_NUMBER} src/${BUILD_IMAGE}-service
+                    docker build -t ${REPO}/${BUILD_IMAGE}-service:${BUILD_NUMBER} src/${BUILD_IMAGE}-service
                 '''
             }
         }
         stage("Docker Push Image"){
             steps{
                 withDockerRegistry(url: "https://index.docker.io/v1/", credentialsId: 'docker-hub'){
-                    sh "docker push ${BUILD_IMAGE}-service:${BUILD_NUMBER}"
+                    sh "docker push ${REPO}/${BUILD_IMAGE}-service:${BUILD_NUMBER}"
                 }
             }
         }
