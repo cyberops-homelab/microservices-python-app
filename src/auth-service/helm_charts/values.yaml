@@ -5,4 +5,4 @@ database:
   password: admin@123
   table: auth_user
 jwt_secret: "hello"
-image: cyber0ps/auth-service
+image: "cyber0ps/auth-service:10"
