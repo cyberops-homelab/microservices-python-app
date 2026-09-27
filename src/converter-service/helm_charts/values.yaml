@@ -1,5 +1,5 @@
 mongodb:
   username: "homelab"
-  password: "homelab@123"
+  password: "homelab%40123"
   service: "mongodb.mongodb.svc.cluster.local"
 image: cyber0ps/converter-service:17
