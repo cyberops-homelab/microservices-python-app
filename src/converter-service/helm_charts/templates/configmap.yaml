@@ -6,3 +6,5 @@ data:
   MP3_QUEUE: "mp3"
   VIDEO_QUEUE: "video"
   MONGODB_URI: "mongodb://{{.Values.mongodb.username }}:{{.Values.mongodb.password }}@{{.Values.mongodb.service }}:27017/mp3s?authSource=admin" #nodeip:nodeport
+  RABBITMQ_HOST: "rabbitmq.rabbitmq"
+  RABBITMQ_PORT: 32611

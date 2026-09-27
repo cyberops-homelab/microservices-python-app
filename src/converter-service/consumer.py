@@ -13,7 +13,7 @@ def main():
 
     # rabbitmq connection
     connection = pika.BlockingConnection(
-        pika.ConnectionParameters(host='rabbitmq',heartbeat=0)
+        pika.ConnectionParameters(host=os.environ.get('RABBITMQ_HOST'),port=os.environ.get('RABBITMQ_PORT'),heartbeat=0)
     )
     channel = connection.channel()
 
