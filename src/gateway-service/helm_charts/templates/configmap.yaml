@@ -6,4 +6,5 @@ data:
   AUTH_SVC_ADDRESS: "auth:5000"
   MONGODB_VIDEOS_URI: "mongodb://{{.Values.mongodb.username }}:{{.Values.mongodb.password }}@{{.Values.mongodb.service }}:27017/videos?authSource=admin"
   MONGODB_MP3S_URI: "mongodb://{{.Values.mongodb.username }}:{{.Values.mongodb.password }}@{{.Values.mongodb.service }}:27017/mp3s?authSource=admin"
-
+  RABBITMQ_HOST: "rabbitmq.rabbitmq"
+  RABBITMQ_PORT: "5672"

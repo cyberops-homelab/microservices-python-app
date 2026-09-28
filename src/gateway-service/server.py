@@ -16,7 +16,7 @@ mongo_mp3 = PyMongo(server, uri=os.environ.get('MONGODB_MP3S_URI'))
 fs_videos = gridfs.GridFS(mongo_video.db)
 fs_mp3s = gridfs.GridFS(mongo_mp3.db)
 
-connection = pika.BlockingConnection(pika.ConnectionParameters(host="rabbitmq", heartbeat=0))
+connection = pika.BlockingConnection(pika.ConnectionParameters(host=os.environ.get('RABBITMQ_HOST'),port=int(os.environ.get('RABBITMQ_PORT')), heartbeat=0))
 channel = connection.channel()
 
 @server.route("/login", methods=["POST"])
