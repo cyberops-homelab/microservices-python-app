@@ -1,6 +1,6 @@
 mongodb:
-  username: "homelab"
-  password: "homelab@123"
+  username: "admin"
+  password: "admin%40123"
   service: "mongodb.mongodb.svc.cluster.local"
 image: "cyber0ps/notification-service:14"
 gmail:

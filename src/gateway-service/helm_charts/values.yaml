@@ -1,5 +1,5 @@
 mongodb:
-  username: "homelab"
-  password: "homelab%40123"
+  username: "admin"
+  password: "admin%40123"
   service: "mongodb.mongodb"
 image: cyber0ps/gateway-service:19
